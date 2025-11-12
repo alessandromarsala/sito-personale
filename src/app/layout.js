@@ -9,20 +9,24 @@ export default function RootLayout({ children }) {
   return (
     <html lang="it">
       <body>
-        <header style={{borderBottom:"1px solid #e5e7eb"}}>
-          <nav style={{maxWidth:900, margin:"0 auto", padding:"12px", display:"flex", gap:16}}>
+        <header className="fixed top-0 w-full bg-white shadow z-50">
+          <nav className="max-w-5xl mx-auto flex justify-center gap-8 py-4">
             <Link href="/">Home</Link>
             <Link href="/projects">Progetti</Link>
             <Link href="/about">Chi sono</Link>
             <Link href="/contact">Contatti</Link>
+            {/* Per ancore nella stessa pagina puoi lasciare <a href="#about">... </a> */}
           </nav>
         </header>
-        <main style={{maxWidth:900, margin:"0 auto", padding:"24px"}}>{children}</main>
-        <footer style={{borderTop:"1px solid #e5e7eb", marginTop:48}}>
-          <div style={{maxWidth:900, margin:"0 auto", padding:"12px"}}>© {new Date().getFullYear()} Alessandro Marsala</div>
+
+        <div className="pt-20">{children}</div>
+
+        <footer className="text-center border-t mt-16 py-4">
+          © {new Date().getFullYear()} Alessandro Marsala
         </footer>
       </body>
     </html>
   );
 }
+
 
